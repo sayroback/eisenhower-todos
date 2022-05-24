@@ -1,36 +1,17 @@
-//@ts-checka
-import React from 'react'
-import TodoItem from './TodoItem';
+import React from "react";
+import TodoItem from "./TodoItem";
+import { TODOS } from "./data/dataTODOs.js";
 
 const TodoList = () => {
-  const TODOS = [
-  {
-    text: "Cebolla",
-    completed: false
-  },
-  {
-    text: "Comprar pastel",
-    completed: true
-  },
-  {
-    text: "Hacer el curso",
-    completed: false
-  },
-  {
-    text: "Lavar ropa",
-    completed: true
-  }
-  ];
-
   return (
-    <div>
-      <ul>
-        {TODOS.map(todo => (
-        <TodoItem key={todo.text} text={todo.text} />
+    <div className="container-list">
+      <ul className="list-ToDos">
+        {TODOS.map((todo, key) => (
+          <TodoItem key={key} todo={todo} />
         ))}
       </ul>
     </div>
-  )
+  );
 };
 
-export default TodoList
+export default TodoList;

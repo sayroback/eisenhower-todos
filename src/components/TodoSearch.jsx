@@ -1,12 +1,15 @@
-import React from 'react'
+import React from "react";
+import SearchIcon from "@mui/icons-material/Search";
 
-function TodoSearch() {
+const TodoSearch = () => {
   return (
     <div>
-      <input type="text" placeholder='Buscar TODOS'/>
-      <button>+</button>
+      <input type="text" placeholder="Buscar TODOS" />
+      <button>
+        <SearchIcon />
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default TodoSearch
+export default TodoSearch;
