@@ -1,17 +1,16 @@
 import React from "react";
-// import PriorityHighIcon from "@mui/icons-material/PriorityHigh";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 
-const TodoItem = ({ todo }) => {
+const TodoItem = (props) => {
   const dateToDo = (props) => {
     const date = `${props.day}-${props.month}-${props.year} ${props.hour}:${props.minutes}
       `;
     return date;
   };
-  const dates = dateToDo(todo.dueDate);
+  const dates = dateToDo(props.todo.dueDate);
   const checkBox = (props) => {
     if (props) {
       return <CheckBoxIcon className="checkBox-ToDo" />;
@@ -20,21 +19,30 @@ const TodoItem = ({ todo }) => {
 
   return (
     <>
-      <li className="container-ToDo">
+      <li
+        className={`container-ToDo ${
+          props.todo.completed && "todo-check--active"
+        }`}
+      >
         <div className="title-ToDo">
-          <p className="priority-ToDo">{todo.priority}</p>
-          <h3>{todo.title}</h3>
-          {checkBox(todo.completed)}
+          <p className="priority-ToDo">{props.todo.priority}</p>
+          <h3>{props.todo.title}</h3>
+          <div onClick={() => props.onComplete(props.todo)}>
+            {checkBox(props.todo.completed)}
+          </div>
         </div>
         <div>
-          <p>{todo.note}</p>
+          <p>{props.todo.note}</p>
         </div>
         <div className="containerDateDelete-ToDo">
           <div className="date-ToDo">
             <CalendarMonthIcon />
             <p>{dates}</p>
           </div>
-          <DeleteIcon className="buttonDelete-ToDo" />
+          <DeleteIcon
+            // onClick={() => onDelete("Delete ToDo")}
+            className="buttonDelete-ToDo"
+          />
         </div>
       </li>
     </>
