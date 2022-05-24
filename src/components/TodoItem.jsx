@@ -7,7 +7,7 @@ import CheckBoxIcon from "@mui/icons-material/CheckBox";
 
 const TodoItem = ({ todo }) => {
   const dateToDo = (props) => {
-    const date = `${props.day} - ${props.month} - ${props.year} / ${props.hour}:${props.minutes}
+    const date = `${props.day}-${props.month}-${props.year} ${props.hour}:${props.minutes}
       `;
     return date;
   };

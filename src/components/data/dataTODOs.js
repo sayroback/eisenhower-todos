@@ -6,7 +6,7 @@ export const TODOS = [
     title: "Cebolla",
     note: "Comprar 1 kilo",
     completed: false,
-    priority: "low",
+    priority: "Postergar",
     dueDate: {
       hour: 20,
       minutes: 56,
@@ -19,7 +19,7 @@ export const TODOS = [
     title: "Comprar pastel",
     note: "De chocolate",
     completed: true,
-    priority: "medium",
+    priority: "Delegar",
     dueDate: {
       hour: 20,
       minutes: 56,
@@ -32,7 +32,7 @@ export const TODOS = [
     title: "Hacer el curso",
     note: "Tomar notas en Notion",
     completed: false,
-    priority: "high",
+    priority: "Planificar",
     dueDate: {
       hour: 20,
       minutes: 56,
@@ -45,7 +45,7 @@ export const TODOS = [
     title: "Lavar ropa",
     note: "Separar la blanca",
     completed: true,
-    priority: "urgent",
+    priority: "Hacer",
     dueDate: {
       hour: 20,
       minutes: 56,

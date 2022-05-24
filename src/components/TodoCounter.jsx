@@ -9,9 +9,9 @@ const TodoCounter = () => {
     <div className="layout-container">
       <div className="welcome">
         <h3>Hola!</h3>
-        <h1>Has completado 2 de 3 TODOs.</h1>
-        <TodoSearch />
+        <h1>¿Cuál es tu prioridad?</h1>
       </div>
+      <TodoSearch />
       <TodoList />
       <footer>
         <div> Develop for Sayroback</div>
