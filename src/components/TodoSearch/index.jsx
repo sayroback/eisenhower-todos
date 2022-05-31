@@ -1,9 +1,10 @@
 import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
+import { TodoContext } from "../TodoContext";
 
-const TodoSearch = ({ searchValue, setSearchValue }) => {
+const TodoSearch = () => {
+  const { searchValue, setSearchValue } = React.useContext(TodoContext);
   const onChangeValueSearch = (event) => {
-    console.log(event.target.value);
     setSearchValue(event.target.value);
   };
 

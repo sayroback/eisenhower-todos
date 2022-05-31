@@ -3,8 +3,10 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
+import { TodoContext } from "../TodoContext";
 
 const TodoItem = (props) => {
+  const { completeTodo, deleteTodo } = React.useContext(TodoContext);
   const dateToDo = (props) => {
     const date = `${props.day}-${props.month}-${props.year} ${props.hour}:${props.minutes}
       `;
@@ -27,7 +29,7 @@ const TodoItem = (props) => {
         <div className="title-ToDo">
           <p className="priority-ToDo">{props.todo.priority}</p>
           <h3>{props.todo.title}</h3>
-          <div onClick={() => props.onComplete(props.todo)}>
+          <div onClick={() => completeTodo(props.todo.title)}>
             {checkBox(props.todo.completed)}
           </div>
         </div>
@@ -40,7 +42,7 @@ const TodoItem = (props) => {
             <p>{dates}</p>
           </div>
           <DeleteIcon
-            // onClick={() => onDelete("Delete ToDo")}
+            onClick={() => deleteTodo(props.todo.title)}
             className="buttonDelete-ToDo"
           />
         </div>
