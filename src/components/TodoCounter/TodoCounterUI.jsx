@@ -4,10 +4,19 @@ import TodoSearch from "../TodoSearch";
 import "../../style/TodoCounter.css";
 import CreateTodoButton from "../CreateTodoButton";
 import { TodoContext } from "../TodoContext";
+import { Modal } from "../Modal";
+import { TodoForm } from "../TodoForm";
 
 const TodoCounterUI = () => {
-  const { completedTodos, totalTodos, error, loading, searchedTodos } =
-    React.useContext(TodoContext);
+  const {
+    completedTodos,
+    totalTodos,
+    error,
+    loading,
+    searchedTodos,
+    openModal,
+    setOpenModal,
+  } = React.useContext(TodoContext);
 
   return (
     <div className="layout-container">
@@ -35,7 +44,12 @@ const TodoCounterUI = () => {
         </ul>
       </div>
       <div className="container-buttonCreate-ToDo">
-        <CreateTodoButton />
+        {!!openModal && (
+          <Modal>
+            <TodoForm />
+          </Modal>
+        )}
+        <CreateTodoButton setOpenModal={setOpenModal} />
       </div>
       <footer>
         <div> Develop for Sayroback</div>
