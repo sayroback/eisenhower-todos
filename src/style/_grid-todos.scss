@@ -1,0 +1,11 @@
+.grid-todos {
+  background-color: rgb(238, 235, 235);
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  &__list {
+    margin: 0 15px;
+    padding-bottom: 35px;
+  }
+}

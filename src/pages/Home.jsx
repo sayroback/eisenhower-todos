@@ -1,5 +1,5 @@
 import React from "react";
-import TodoCounter from "../TodoCounter/index.js";
+import TodoCounter from "../components/TodoCounter";
 
 const Home = () => {
   return (

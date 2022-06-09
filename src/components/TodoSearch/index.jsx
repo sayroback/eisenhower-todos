@@ -9,10 +9,10 @@ const TodoSearch = () => {
   };
 
   return (
-    <div className="container-search-ToDo">
+    <div className="search-todo">
       <input
         onChange={onChangeValueSearch}
-        className="search-ToDo"
+        className="search-todo__input"
         type="text"
         value={searchValue}
         placeholder="Buscar TODOS"

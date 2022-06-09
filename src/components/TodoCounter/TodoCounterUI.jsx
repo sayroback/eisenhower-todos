@@ -1,7 +1,7 @@
 import React from "react";
 import TodoItem from "../TodoItem";
 import TodoSearch from "../TodoSearch";
-import "../../style/TodoCounter.css";
+import "../../style/todo-styles.scss";
 import CreateTodoButton from "../CreateTodoButton";
 import { TodoContext } from "../TodoContext";
 import { Modal } from "../Modal";
@@ -19,17 +19,17 @@ const TodoCounterUI = () => {
   } = React.useContext(TodoContext);
 
   return (
-    <div className="layout-container">
-      <div className="welcome">
+    <>
+      <header className="welcome">
         <h3>Hola!</h3>
         <h1>¿Cuál es tu prioridad?</h1>
         <p>
           Has completado {completedTodos} de {totalTodos} TODOs
         </p>
-      </div>
+      </header>
       <TodoSearch />
-      <div className="container-list">
-        <ul className="list-ToDos">
+      <main className="grid-todos">
+        <section className="grid-todos__list">
           {error && <p>Desespérate, hubo un error...</p>}
           {loading && <p>Estamos cargando, no desesperes...</p>}
           {!loading && !searchedTodos.length && <p>¡Crea tu primer TODO!</p>}
@@ -41,9 +41,9 @@ const TodoCounterUI = () => {
               // onDelete={() => deleteTodo(todo.title)}
             />
           ))}
-        </ul>
-      </div>
-      <div className="container-buttonCreate-ToDo">
+        </section>
+      </main>
+      <div className="create-todo">
         {!!openModal && (
           <Modal>
             <TodoForm />
@@ -51,10 +51,10 @@ const TodoCounterUI = () => {
         )}
         <CreateTodoButton setOpenModal={setOpenModal} />
       </div>
-      <footer>
+      <footer className="todos-footer">
         <div> Develop for Sayroback</div>
       </footer>
-    </div>
+    </>
   );
 };
 

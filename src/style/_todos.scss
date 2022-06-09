@@ -1,0 +1,39 @@
+.todo {
+  list-style: none;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: rgb(158, 215, 241);
+  border-radius: 30px;
+  box-shadow: 6px 5px 5px rgb(197, 209, 212);
+  &--complete {
+    background-color: yellow;
+  }
+  &__header {
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(136, 203, 235);
+    &__priority {
+      border-radius: 5px;
+      padding: 0 7px;
+      background-color: rgb(201, 192, 70);
+      color: aliceblue;
+    }
+    &__checkbox {
+      justify-content: end;
+      color: green;
+    }
+  }
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    &__date {
+      display: flex;
+    }
+    &__delete {
+      color: brown;
+    }
+  }
+}

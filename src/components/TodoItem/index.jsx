@@ -15,38 +15,35 @@ const TodoItem = (props) => {
   const dates = dateToDo(props.todo.dueDate);
   const checkBox = (props) => {
     if (props) {
-      return <CheckBoxIcon className="checkBox-ToDo" />;
-    } else return <CheckBoxOutlineBlankIcon className="checkBox-ToDo" />;
+      return <CheckBoxIcon className="todo__header__checkbox" />;
+    } else
+      return <CheckBoxOutlineBlankIcon className="todo__header__checkbox" />;
   };
 
   return (
     <>
-      <li
-        className={`container-ToDo ${
-          props.todo.completed && "todo-check--active"
-        }`}
-      >
-        <div className="title-ToDo">
-          <p className="priority-ToDo">{props.todo.priority}</p>
-          <h3>{props.todo.title}</h3>
+      <article className={`todo ${props.todo.completed && "todo--complete"}`}>
+        <header className="todo__header">
+          <p className="todo__header__priority">{props.todo.priority}</p>
+          <h3 className="todo__header__title">{props.todo.title}</h3>
           <div onClick={() => completeTodo(props.todo.title)}>
             {checkBox(props.todo.completed)}
           </div>
-        </div>
-        <div>
+        </header>
+        <main>
           <p>{props.todo.note}</p>
-        </div>
-        <div className="containerDateDelete-ToDo">
-          <div className="date-ToDo">
+        </main>
+        <footer className="todo__footer">
+          <div className="todo__footer__date">
             <CalendarMonthIcon />
             <p>{dates}</p>
           </div>
           <DeleteIcon
             onClick={() => deleteTodo(props.todo.title)}
-            className="buttonDelete-ToDo"
+            className="todo__footer__delete"
           />
-        </div>
-      </li>
+        </footer>
+      </article>
     </>
   );
 };

@@ -1,0 +1,24 @@
+.create-todo {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  z-index: 1;
+  #create-todo__button {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background: #fcfcfc;
+    right: 0;
+    bottom: 50px;
+    position: absolute;
+    margin-right: 16px;
+    border: none;
+    outline: none;
+    color: rgb(71, 173, 88);
+    font-size: 36px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    transition: 0.3s;
+  }
+}

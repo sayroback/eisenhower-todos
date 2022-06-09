@@ -1,6 +1,5 @@
 import React from "react";
 import { TodoContext } from "../TodoContext";
-import "./TodoForm.css";
 
 const TodoForm = () => {
   const [newTodo, setNewTodo] = React.useState({
@@ -31,7 +30,7 @@ const TodoForm = () => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form className="todo-modal__form" onSubmit={onSubmit}>
       <label>Escribe tu nuevo TODO</label>
       <input type="text" value={newTodo.title} />
       <textarea
@@ -39,15 +38,18 @@ const TodoForm = () => {
         onChange={onChange}
         placeholder="Cortar la cebolla para el almuerzo"
       />
-      <div className="TodoForm-buttonContainer">
+      <div className="todo-modal__form__buttons">
         <button
           type="button"
-          className="TodoForm-button TodoForm-button--cancel"
+          className="todo-modal__form__buttons__button todo-modal__form__buttons__button--cancel"
           onClick={onCancel}
         >
           Cancelar
         </button>
-        <button type="submit" className="TodoForm-button TodoForm-button--add">
+        <button
+          type="submit"
+          className="todo-modal__form__buttons__button todo-modal__form__buttons__button--add"
+        >
           Añadir
         </button>
       </div>
